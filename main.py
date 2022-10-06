@@ -1,4 +1,6 @@
 ## This is Python3, not Python2 which was learned from Codecademy
+from os.path import exists
+
 codeDict = { 
   'A': '`',
   'a': '~',
@@ -71,9 +73,12 @@ menu2D = "Enter a file to write decrytion to: "
 #Ask for user input until valid input entered
 while (userChoice != '1') and (userChoice != '2') and (userChoice != 'x') and (userChoice != "X"):
   userChoice = input(menuString)
+  if (userChoice != '1') and (userChoice != '2') and (userChoice !=   'x') and (userChoice != "X"):
+    print ("Error: Please enter valid menu option")
   #Exit program if user wants to exit
   if userChoice == 'x' or userChoice == 'X':
-    quit()
+    print("Have a nice day!")
+    break
   #Do what the user selected
   elif userChoice == '1':
     string1 = ""
@@ -81,8 +86,16 @@ while (userChoice != '1') and (userChoice != '2') and (userChoice != 'x') and (u
     #Get user files and make sure they are txt files
     while (string1.endswith(".txt") == False):
       string1 = input(menu1D)
+      if (string1.endswith(".txt") == False):
+        print ("Error: Please enter txt file!")
+      #Check to see if user file exists
+      if (exists(string1) == False):
+        string1 = ""
+        print ("Error: Please enter existing file!")
     while (string2.endswith(".txt") == False):
       string2 = input(menu1E)
+      if (string2.endswith(".txt") == False):
+        print ("Error: Please enter txt file!")
     #Open and read valid file
     inputFile = open(string1, "r")
     decrypted =  str(inputFile.read())
@@ -100,8 +113,16 @@ while (userChoice != '1') and (userChoice != '2') and (userChoice != 'x') and (u
     string2 = ""
     while (string1.endswith(".txt") == False):
       string1 = input(menu2E)
+      if (string1.endswith(".txt") == False):
+        print ("Error: Please enter txt file!")
+      #Check to see if user file exists
+      if (exists(string1) == False):
+        string1 = ""
+        print ("Error: Please enter existing file!")
     while (string2.endswith(".txt") == False):
       string2 = input(menu2D)
+      if (string2.endswith(".txt") == False):
+        print ("Error: Please enter txt file!")
     #Start Decryption
     inputFile = open(string1, "r")
     encrypted =  str(inputFile.read())
