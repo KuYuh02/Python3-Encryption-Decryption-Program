@@ -1,2 +1,4 @@
-# Python3-Encryption-Decryption-Program
-Encrypts/Decrypts user file and writes to another file
+1. Python3 Encryption/Decryption Program
+
+2. Project Description
+   This is a very simple, and my first Python Project. After you click run, it asks the user for various inputs. First it asks the user the option for if they want to encrypt or decrypt a message. Then gets such file, and asks the user for the name of the file to create and write to. This is done all in a continous menu, and all the input are checked and validated. For example, checks the user entered a valid option, a txt file, a file that exists. etc. As for the encryption/decryption it is as simple as can be. It looks the manually created dictionary and simple substitutes every character in the string for the key/value counterpart and saves to string and writes to a file. I hope to integrate a more practical encryption algorithm as I learn more about the Python language. Thank you for your time!
